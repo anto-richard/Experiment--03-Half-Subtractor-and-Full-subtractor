@@ -63,30 +63,23 @@ Program to design a half subtractor and full subtractor circuit and verify its t
 Developed by: Anto Richard. S
 Register Number:  212221240005
 
-
 HALF SUBTRACTOR:
 
-module HalfSubtractor(A,B,Diff,Borrow);
-input A,B;
-output Diff,Borrow;
-wire x;
-xor (Diff, A,B);
-not(x,A);
-and(Borrow,x,B);
-endmodule
+module HalfSubtractor(a,b,diff,borr); 
+input a,b;  
+output diff,borr; 
+assign diff = (a^b);  
+assign borr = (~a&b); 
+endmodule 
 
 FULL SUBTRACTOR:
 
-module FullSubtractor(A,B,C,Diff,Borrow);
-input A,B,C;
-output Diff,Borrow;
-wire p;
-assign Diff = ((A^B)^C);
-not(p,A);
-assign Borrow = ((p&B)|(p&C)|(B&C));
+module FullSubtractor(a,b,c,diff,borr);
+input a,b,c;
+output diff,borr;
+assign borr = (~a&(b^c)|(b&c));
+assign diff = (a^b^c);
 endmodule
-
-
 
 ```
 
@@ -96,48 +89,40 @@ endmodule
 
 ## Logic Symbol:
 
-![i1](https://user-images.githubusercontent.com/93427534/232090847-cf5b2333-3e77-40ec-8345-17a49bfbc0dc.png)
-
+![out1](https://user-images.githubusercontent.com/93427534/233125358-814f9faa-e3b9-46cf-a69f-d66b5eebc190.png)
 
 ## Truthtable:
 
-![i2](https://user-images.githubusercontent.com/93427534/232090855-c816615d-894a-42e1-ad0f-bcbf17e4e867.png)
-
+![out2](https://user-images.githubusercontent.com/93427534/233125378-ccd02f54-568f-44bc-8613-cbac03bab2ad.png)
 
 ##  RTL realization:
 
-![i3](https://user-images.githubusercontent.com/93427534/232090863-999cb9f1-fa6e-4145-9e34-4baf49da7906.png)
-
+![out3](https://user-images.githubusercontent.com/93427534/233125389-32092965-d551-48c0-8c4f-db73f9bf7e16.png)
 
 ## Timing diagram :
 
-![i4](https://user-images.githubusercontent.com/93427534/232090873-59c2497b-bb69-4c11-a3c9-8f3919756963.png)
-
+![out4](https://user-images.githubusercontent.com/93427534/233125420-d9165696-1209-40f5-87ee-0e1144f4b79d.png)
 
 ## Full Subtractor:
 
 ## Logic Symbol:
 
-![i5](https://user-images.githubusercontent.com/93427534/232090905-5990e1ba-e3d6-41a0-8088-dd66b68688c1.png)
-
+![img1](https://user-images.githubusercontent.com/93427534/233125460-6dca49d0-a7b2-4c18-b47c-354f7777f7e5.png)
 
 ## Truthtable:
 
-![i6](https://user-images.githubusercontent.com/93427534/232090914-9af8285a-9b3d-4063-950d-dcdbb8a402c6.png)
-
+![img2](https://user-images.githubusercontent.com/93427534/233125479-edec9179-8e30-443c-9bfe-358a646896c2.png)
 
 ##  RTL realization:
 
-![i7](https://user-images.githubusercontent.com/93427534/232090927-ff771c74-400a-4ea7-9de6-2b75f7cdaee6.png)
-
+![img3](https://user-images.githubusercontent.com/93427534/233125499-a8b8ca31-f19e-4702-b737-e0fbe14661e8.png)
 
 ## Timing diagram :
 
-![i8](https://user-images.githubusercontent.com/93427534/232090936-5fb2efb2-dbf0-4d03-816d-3b015b92c52c.png)
-
-
+![img4](https://user-images.githubusercontent.com/93427534/233125509-11fda912-c52f-40f6-a455-bea0497be51f.png)
 
 ## Result:
+
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
 
 
